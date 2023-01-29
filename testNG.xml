@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Pizzahut Application Cart Flow">
+    <test name="Checkout Page Flow .." >
+        <parameter name="address" value="lulu mall bangalore"></parameter>
+        <parameter name="name" value="Ravi Kumar"></parameter>
+        <parameter name="mobile" value="5346000000"></parameter>
+        <parameter name="email" value="test@email.com"></parameter>
+
+
+        <classes>
+            <class name="stepDef.testNG_Pizzaflow" />
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,351 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-01-29T10:18:53.244Z",
+        "before": [
+          {
+            "result": {
+              "duration": 9334503000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.CucumberSteps.setUp()"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "Validate Pizzahut pizza order flow",
+        "description": "",
+        "id": "validate-pizzahut-application-cart-flow;validate-pizzahut-pizza-order-flow;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1379937000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.CucumberSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6921089000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User launch Pizzahut application with \"https://www.pizzahut.co.in/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://www.pizzahut.co.in/\"",
+                  "offset": 38
+                }
+              ],
+              "location": "stepDef.CucumberSteps.user_launch_pizzahut_application_with(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1158031000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User wait for auto location black pop up screen",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_wait_for_auto_location_black_pop_up_screen()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 88193000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User close the pop up screen",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_close_the_pop_up_screen()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 54986000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User see pop up for delivery asking for enter location",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_see_pop_up_for_delivery_asking_for_enter_location()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 358584000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User type address as \"lulu mall bangalore\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"lulu mall bangalore\"",
+                  "offset": 21
+                }
+              ],
+              "location": "stepDef.CucumberSteps.user_type_address_as(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20148394000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User select first auto populate drop down option",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_select_first_auto_populate_drop_down_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 49061000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User navigate to deails page",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_navigate_to_deails_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 34966000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User validate vegetarian radio button flag is off",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_validate_vegetarian_radio_button_flag_is_off()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5170882000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User clicks on Pizzas menu bar option",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_clicks_on_pizzas_menu_bar_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5462245000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User select add button of any pizza from Recommended",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_select_add_button_of_any_pizza_from_recommended()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 40368000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User see that the pizza is getting added under Your Basket",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_see_that_the_pizza_is_getting_added_under_your_basket()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 239616000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User validate pizza price plus Tax is checkout price",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_validate_pizza_price_plus_tax_is_checkout_price()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 35137000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User validate checkout button contains Item count",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_validate_checkout_button_contains_item_count()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 65851000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User validate checkout button contains total price count",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_validate_checkout_button_contains_total_price_count()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 190842000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User clicks on Drinks option",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_clicks_on_drinks_option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10253189000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User select Pepsi option to add into the Basket",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_select_pepsi_option_to_add_into_the_basket()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33463000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User see 2 items are showing under checkout button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 9
+                }
+              ],
+              "location": "stepDef.CucumberSteps.user_see_items_are_showing_under_checkout_button(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24422000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User see total price is now more than before",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_see_total_price_is_now_more_than_before()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3133087000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User remove the Pizza item from Basket",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_remove_the_pizza_item_from_basket()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 39590000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "see Price tag got removed from the checkout button",
+            "match": {
+              "location": "stepDef.CucumberSteps.see_price_tag_got_removed_from_the_checkout_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24281000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User see 1 item showing in checkout button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 9
+                }
+              ],
+              "location": "stepDef.CucumberSteps.user_see_item_showing_in_checkout_button(java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3154513000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "User Clicks on Checkout button",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_clicks_on_checkout_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 58408000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User see minimum order required pop up is getting displayed",
+            "match": {
+              "location": "stepDef.CucumberSteps.user_see_minimum_order_required_pop_up_is_getting_displayed()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          }
+        ]
+      }
+    ],
+    "name": "Validate Pizzahut Application Cart Flow",
+    "description": "",
+    "id": "validate-pizzahut-application-cart-flow",
+    "keyword": "Feature",
+    "uri": "file:src/test/Feature/pizzahut.feature",
+    "tags": []
+  }
+]
