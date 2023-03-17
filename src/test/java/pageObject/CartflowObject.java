@@ -6,7 +6,7 @@ public class CartflowObject {
     public By BlackScreenCloseBTN(){return By.xpath("//button[@data-synth='close-offer-collection']");}
     public By DeliveryLocationTextBox(){return By.xpath("//input[@placeholder='Enter your location for delivery']");}
     public By DeliveryLocationText(){return By.xpath("//div[text()='Lulu Mall Bengaluru']");}
-
+    public By selectMallFinally() {return By.xpath("//span[text()='Bangalore - Lulu Mall']");}
     public By StartYourOrderWithTime(){return By.xpath("//span[text()='Start your order']");}
 
     public By DealsBTN(){return By.xpath("//a[contains(@class,'active')]/span[text()='Deals']");}
