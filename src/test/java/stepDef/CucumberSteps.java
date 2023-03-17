@@ -80,8 +80,9 @@ public class CucumberSteps {
     @When("User wait for auto location black pop up screen")
     public void user_wait_for_auto_location_black_pop_up_screen() {
 
-         CloseButton = new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(ExpectedConditions.elementToBeClickable(CUBR_Obj.BlackScreenCloseBTN()));
+         try{CloseButton = new WebDriverWait(driver, Duration.ofSeconds(20))
+                .until(ExpectedConditions.elementToBeClickable(CUBR_Obj.BlackScreenCloseBTN()));}
+         catch(Exception e) {e.printStackTrace();}
     }
 
     @Then("User close the pop up screen")
@@ -91,7 +92,7 @@ public class CucumberSteps {
             logger.pass("User wait for auto location black pop up screen , closed it");
         }
         catch(Exception e){
-            logger.fail("black pop up screen not displayed");
+            logger.warning("black pop up screen not displayed , this pop up comes based on location");
         }
     }
 
@@ -121,6 +122,7 @@ public class CucumberSteps {
             Thread.sleep(5000);
             driver.findElement(CUBR_Obj.DeliveryLocationText()).click();
             Thread.sleep(5000);
+            try{ driver.findElement(CUBR_Obj.selectMallFinally()).click();Thread.sleep(5000);}catch(Exception e){}
             try{ driver.findElement(CUBR_Obj.StartYourOrderWithTime()).click();}catch(Exception e){}
             logger.pass("Delivery Location Added Successfully");
             Thread.sleep(10000);
@@ -296,11 +298,12 @@ public class CucumberSteps {
     public void see_price_tag_got_removed_from_the_checkout_button() {
 
         try {
-            Assert.assertFalse(driver.findElement(CUBR_Obj.PriceOptionUnderCheckout(driver.findElement(CUBR_Obj.TotalPriceAmount()).getText().trim())).isDisplayed());
-            logger.pass("Checkout button not contains total price as expected");
+            driver.findElement(CUBR_Obj.PriceOptionUnderCheckout(driver.findElement(CUBR_Obj.TotalPriceAmount()).getText().trim())).isDisplayed();
+            logger.fail("Checkout button contains total price , even though total amount is < 200");
         }
         catch(Exception e){
-            logger.fail("Checkout button contains total price");
+        	logger.pass("Checkout button not contains total price as expected as total amount is < 200");
+            
         }
     }
 
