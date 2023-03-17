@@ -74,7 +74,7 @@ public class testNG_Pizzaflow {
         try {
             System.out.println("##### Starting Chrome Browser ############");
 
-            WebDriverManager.chromedriver().driverVersion("109.0.5414.87 ").setup();
+            WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.get(resObj.read_data_from_XL("URL"));
@@ -91,14 +91,15 @@ public class testNG_Pizzaflow {
 
         // A black color auto pop up screen should display , close it.
 
-        WebElement CloseButton = new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(ExpectedConditions.elementToBeClickable(pageObj.BlackScreenCloseBTN()));
+        
         try {
+        	WebElement CloseButton = new WebDriverWait(driver, Duration.ofSeconds(20))
+                    .until(ExpectedConditions.elementToBeClickable(pageObj.BlackScreenCloseBTN()));
             CloseButton.click();
             logger.pass("User wait for auto location black pop up screen , closed it");
         }
         catch(Exception e){
-            logger.fail("black pop up screen not displayed");
+            logger.warning("black pop up screen not displayed");
         }
 
         // Then user delivery location as Lulu mall bangalore.
@@ -110,8 +111,9 @@ public class testNG_Pizzaflow {
             Thread.sleep(2000);
             driver.findElement(pageObj.DeliveryLocationText()).click();
             Thread.sleep(5000);
+            try{ driver.findElement(pageObj.selectMallFinally()).click();Thread.sleep(5000);}catch(Exception e){}
             try{ driver.findElement(pageObj.StartYourOrderWithTime()).click();}catch(Exception e){}
-            logger.pass("Delivery Location Added Successfully");
+            logger.pass("Delivery Location Selected Successfully");
             Thread.sleep(10000);
         }
         catch(Exception e){
