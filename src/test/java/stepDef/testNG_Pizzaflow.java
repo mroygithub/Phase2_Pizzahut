@@ -31,10 +31,7 @@ import reusable.Reusable;
 import pageObject.CartflowObject;
 
 public class testNG_Pizzaflow {
-
-
     //helps to generate the logs in the test report.
-
     private ExtentSparkReporter spark;
     private ExtentReports extent;
     private ExtentTest logger;
@@ -74,13 +71,17 @@ public class testNG_Pizzaflow {
         try {
             System.out.println("##### Starting Chrome Browser ############");
 
-            WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
-            driver = new ChromeDriver();
+            ChromeOptions opt = new ChromeOptions();
+            opt.addArguments("--remote-allow-origins=*");
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(opt);
             driver.manage().window().maximize();
             driver.get(resObj.read_data_from_XL("URL"));
             driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
             logger.createNode("User can Successfully launch the Chrome Browser");
             Thread.sleep(20000);
+
+
         }
         catch(Exception e){logger.fail("Instantiate of the Chrome Browser Failed");}
     }
@@ -91,15 +92,14 @@ public class testNG_Pizzaflow {
 
         // A black color auto pop up screen should display , close it.
 
-        
+        WebElement CloseButton = new WebDriverWait(driver, Duration.ofSeconds(20))
+                .until(ExpectedConditions.elementToBeClickable(pageObj.BlackScreenCloseBTN()));
         try {
-        	WebElement CloseButton = new WebDriverWait(driver, Duration.ofSeconds(20))
-                    .until(ExpectedConditions.elementToBeClickable(pageObj.BlackScreenCloseBTN()));
             CloseButton.click();
             logger.pass("User wait for auto location black pop up screen , closed it");
         }
         catch(Exception e){
-            logger.warning("black pop up screen not displayed");
+            logger.fail("black pop up screen not displayed");
         }
 
         // Then user delivery location as Lulu mall bangalore.
@@ -111,9 +111,8 @@ public class testNG_Pizzaflow {
             Thread.sleep(2000);
             driver.findElement(pageObj.DeliveryLocationText()).click();
             Thread.sleep(5000);
-            try{ driver.findElement(pageObj.selectMallFinally()).click();Thread.sleep(5000);}catch(Exception e){}
             try{ driver.findElement(pageObj.StartYourOrderWithTime()).click();}catch(Exception e){}
-            logger.pass("Delivery Location Selected Successfully");
+            logger.pass("Delivery Location Added Successfully");
             Thread.sleep(10000);
         }
         catch(Exception e){
