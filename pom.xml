@@ -108,7 +108,7 @@
 
                     <!-- This is For TestNG maven Run -->
                     <suiteXmlFiles>
-                    <!--    <suiteXmlFile>testNG.xml</suiteXmlFile> --> <!--This is For TestNG Run-->
+                    <suiteXmlFile></suiteXmlFile> --> <!--This is For TestNG Run-->
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
