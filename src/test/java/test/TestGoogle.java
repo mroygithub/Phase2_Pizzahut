@@ -32,11 +32,11 @@ public class TestGoogle {
     }
 
     @Test
-    @Parameters({"url"})
-    public void test_Google_App(String url){
+   // @Parameters({"url"})
+    public void test_Google_App(){
 
-        driver.get(url);
-        //Assert.assertTrue(driver.findElement(By.xpath("//img[@class='lnXdpd']")).isDisplayed());
+        driver.get("https://www.google.com");
+        Assert.assertTrue(driver.findElement(By.xpath("//img[@class='lnXdpd']")).isDisplayed());
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
 
