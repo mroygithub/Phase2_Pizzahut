@@ -4,7 +4,7 @@
 <suite name = "Suite1" parallel="false" thread-count="1">
     <test name = "GooGle_Test">
         <classes>
-            <class name = "test.TestScripts">
+            <class name = "test.TestGoogle">
             </class>
         </classes>
     </test>
