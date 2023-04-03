@@ -37,6 +37,7 @@ public class TestGoogle {
 
         driver.get("https://www.google.com");
         Assert.assertTrue(driver.findElement(By.xpath("//img[@class='lnXdpd']")).isDisplayed());
+        System.out.println("Google Logo is present .....");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
 
