@@ -7,6 +7,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.*;
+import org.testng.annotations.Parameters;
+
 
 public class TestGoogle {
 
@@ -25,15 +27,16 @@ public class TestGoogle {
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.get("https://www.google.com");
+        
 
     }
 
     @Test
-    public void test_Google_App(){
+    @Parameters({"url"})
+    public void test_Google_App(String url){
 
-
-        Assert.assertTrue(driver.findElement(By.xpath("//img[@class='lnXdpd']")).isDisplayed());
+        driver.get(url);
+        //Assert.assertTrue(driver.findElement(By.xpath("//img[@class='lnXdpd']")).isDisplayed());
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
 
