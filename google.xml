@@ -3,7 +3,7 @@
 
 <suite name = "Suite1" parallel="false" thread-count="1">
     <test name = "GooGle_Test">
-        <parameter name="url" value="${appurl}"></parameter>
+      <!--  <parameter name="url" value="${appurl}"></parameter> -->
         <classes>
             <class name = "test.TestGoogle">
             </class>
