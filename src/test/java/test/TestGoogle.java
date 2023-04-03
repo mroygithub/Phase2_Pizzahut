@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.*;
 
-public class TestScripts {
+public class TestGoogle {
 
     public WebDriver driver;
 
