@@ -103,12 +103,12 @@
                     <!-- This is For Cucumber maven Run -->
 
                     <includes>
-                        <include>**/TestRunner*.java</include>
+                      <!--   <include>**/TestRunner*.java</include> -->
                     </includes>
 
                     <!-- This is For TestNG maven Run -->
                     <suiteXmlFiles>
-                    <suiteXmlFile></suiteXmlFile> --> <!--This is For TestNG Run-->
+                    <suiteXmlFile>google.xml</suiteXmlFile> --> <!--This is For TestNG Run-->
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
